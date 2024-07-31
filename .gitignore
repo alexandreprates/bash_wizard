@@ -1,3 +1,3 @@
-./dist
-./src/bash_wizzard.egg-info
+dist/
+src/bash_wizard.egg-info/
 **/__pycache__

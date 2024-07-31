@@ -7,8 +7,8 @@ class PostInstallCommand(install):
         install.run(self)
         try:
             subprocess.check_call(['ollama', 'pull', 'llama3'])
-        except subprocess.CalledProcessError as e:
-            print(f"Error on fetch ollama model: {e}")
+        except Exception as e:
+            print(f"Error on fetch Ollama model, please check that Ollama is installed and running.\nError: {e}")
             exit(0)
 
 setup(

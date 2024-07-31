@@ -9,7 +9,6 @@ class PostInstallCommand(install):
             subprocess.check_call(['ollama', 'pull', 'llama3'])
         except Exception as e:
             print(f"Error on fetch Ollama model, please check that Ollama is installed and running.\nError: {e}")
-            exit(0)
 
 setup(
     name='bash_wizard',

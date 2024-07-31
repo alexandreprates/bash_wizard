@@ -9,11 +9,11 @@ class PostInstallCommand(install):
             subprocess.check_call(['ollama', 'pull', 'llama3'])
         except subprocess.CalledProcessError as e:
             print(f"Error on fetch ollama model: {e}")
-            raise        
+            exit(0)
 
 setup(
     name='bash_wizard',
-    version='0.1.0',
+    version='0.0.1',
     packages=['bash_wizard'],
     cmdclass={
         'install': PostInstallCommand,

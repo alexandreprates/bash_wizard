@@ -14,6 +14,11 @@ dependencies = [
     "ollama>=0.3.0",
     "bashcolor>=1.1.1"
 ]
+keywords = ["bash", "helper", "script", "ai", "llama"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
 
 [project.urls]
 Source = "https://github.com/alexandreprates/bash_wizard"

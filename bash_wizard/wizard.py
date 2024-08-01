@@ -15,7 +15,7 @@ ollama_args = {
         "temperature": 2.5,
         "top_p": 0.99,
         "top_k": 100,
-        "seed": 23265971541
+        "seed": 23265971542
     },
 }
 response_template = '{"bash_command": "", "command_explanation": ""}'

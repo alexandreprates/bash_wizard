@@ -11,9 +11,15 @@ ollama_args = {
     "model": model,
     "format": "json",
     "stream": False,
-    "options": {"temperature": 2.5, "top_p": 0.99, "top_k": 100, "seed": 23265971541},
+    "options": {
+        "temperature": 2.5,
+        "top_p": 0.99,
+        "top_k": 100,
+        "seed": 23265971541
+    },
 }
 response_template = '{"bash_command": "", "command_explanation": ""}'
+
 
 def pull_model():
     status = ""
@@ -22,15 +28,15 @@ def pull_model():
             print('☕️ ', end="", flush=True)
             status = progress['status']
     print(' done! 🙌', flush=True)
-    
+
 
 def check_model():
     try:
         ollama.show(model)
-    except httpx.ConnectError as e:
+    except httpx.ConnectError:
         print(messages.missing_ollama)
         exit(1)
-    except ollama._types.ResponseError as e:
+    except ollama._types.ResponseError:
         print(messages.missing_model, end="")
         pull_model()
 
@@ -40,23 +46,30 @@ def args_description():
     if not description or description == '-h':
         print(messages.help)
         exit(0)
-        
+
     return description
 
 
-def generate(description:str) -> dict:
-    prompt = f"You are a linux bash command line wizard, please answer how can I do: \n {description}. \nUse the following template: {response_template}."
-    response = ollama.generate(prompt=prompt, **ollama_args)
+def generate(description: str) -> dict:
+    prompt = f"""
+You are a linux bash command line wizard, please answer how can I do:
+
+{description}.
+
+Use the following template: {response_template}.
+"""
+    response = ollama.generate(prompt=prompt.strip(), **ollama_args)
     data = json.loads(response['response'])
-    
+
     return {key: value.strip() for key, value in data.items()}
-  
+
+
 def run():
     check_model()
-    
+
     description = args_description()
     print(messages.thinking(description))
-    
+
     response = generate(description)
     user_input = input(messages.output(**response)).strip().lower()
     if user_input == 'y':

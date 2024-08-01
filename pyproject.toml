@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bash_wizard"
-version = "0.0.1"
+dynamic = ["version"]
 description = "An AI powered wizard to bash commands"
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -12,16 +12,13 @@ maintainers = [{name = "Alexandre Prates", email = "ajfprates@gmail.com"}]
 requires-python = ">=3.10"
 dependencies = [
     "ollama>=0.3.0",
-    "requests>=2.32.3",
     "bashcolor>=1.1.1"
 ]
 
 [project.urls]
 Source = "https://github.com/alexandreprates/bash_wizard"
 
-
 [project.scripts]
-bash_wizard = "bash_wizard:run"
+bash_wizard = "bash_wizard.wizard:run"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.setuptools_scm]

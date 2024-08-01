@@ -19,6 +19,6 @@ dependencies = [
 Source = "https://github.com/alexandreprates/bash_wizard"
 
 [project.scripts]
-bash_wizard = "bash_wizard.wizard:run"
+bash_wizard = "bash_wizard:run"
 
 [tool.setuptools_scm]

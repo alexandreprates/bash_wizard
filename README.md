@@ -11,9 +11,8 @@
 
 ### Dependencies
 
-* `Ollama`: Get up and running with large language models.
-https://github.com/ollama/ollama
-
+* [Ollama](https://github.com/ollama/ollama)
+Bash Wizard uses the Ollama endpoint to run the AI ​​model
 
 ## Installation
 

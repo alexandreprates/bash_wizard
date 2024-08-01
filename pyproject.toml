@@ -21,8 +21,7 @@ Source = "https://github.com/alexandreprates/bash_wizard"
 
 
 [project.scripts]
-bash_wizard = "bash_wizard:wizard"
+bash_wizard = "bash_wizard:run"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-namespaces = false  # true by default

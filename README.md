@@ -1,4 +1,5 @@
 # Bash Wizard 🧙
+[![Test Bash Wizard](https://github.com/alexandreprates/bash_wizard/actions/workflows/test.yml/badge.svg)](https://github.com/alexandreprates/bash_wizard/actions/workflows/test.yml)
 
 `bash_wizard` is a command line wizard that helps you generate bash commands. It leverages the power of AI (llama3) to provide explanations and generate bash commands based on user queries.
 
